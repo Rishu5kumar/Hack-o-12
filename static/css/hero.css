@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
+    --btn-red: #ff1a1a;
+    --section-bg: #FFF0F5;
+}
+
+.content {
+    width: 80%;
+    padding: 20px;
+}
+
+.next-row {
+    clear: both;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+main {
+    width: 100%;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+ul {
+    list-style: none;
+
+}
+.aside {
+    width: 270px;
+    background: var(--bg-black-100);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0;
+    height: 100%;
+    border-right: 1px solid var(--bg-black-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    /* overflow-y: auto;  */
+
+}
+
+.aside .logo{
+    position: absolute;
+    top: 0;
+    /* font-size: 30px; */
+    text-transform: capitalize;
+}
+
+.site-logo{
+    width: q80px;
+    height: 120px;
+}
+
+
+.aside .nav {
+    margin-top: 150px;
+}
+
+.aside .nav li {
+    margin-bottom: 20px;
+    display: block;
+
+}
+
+.aside .nav li a {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 3px 15px;
+}
+
+
+.aside .nav li a i {
+    margin-right: 15px;
+}
+header {
+    background-color: #1e7a1e;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.language-select {
+    display: inline-block;
+    position: relative;
+}
+
+.language-select select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    appearance: none;
+}
+
+.language-select::after {
+    content: '\25BC';
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.page {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/images/web_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.box {
+    padding: 40px 40px 40px 40px;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.box img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.icons {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.icons li {
+    margin-left: 10px;
+}
+
+.icons i {
+    font-size: 20px;
+}
+
+.icons i:hover::after {
+    content: attr(title);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.sublist {
+    display: none; /* Hide the sublist by default */
+    position: absolute;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+.sublist li {
+    margin-bottom: 5px;
+}
+
+.nav li:hover .sublist {
+    display: block;
+}
+
+footer {
+    bottom: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-words {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-words span {
+    font-size: 18px;
+}
+
+.copyright-content {
+    font-size: 14px;
+}

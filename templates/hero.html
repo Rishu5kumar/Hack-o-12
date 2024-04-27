@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Mitra</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/site-logo_2.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="aside float-right">
+            <div class="logo">
+                <span><img class="site-logo" src="{{ url_for('static', filename='images/site-logo_2.png') }}"
+                        alt="loading..." /></span>
+            </div>
+            <ul class="nav">
+                <li><a href="#" class="active"><i class="fa fa-home"></i>Predictions</a>
+                    <ul class="sublist">
+                        <li><a href="#">Rainfall Prediction</a></li>
+                        <li><a href="{{url_for('yieldpredict')}}">Crop Yield Prediction</a></li>
+                        <li><a href="#">Plant Disease Prediction</a></li>
+                        <li><a href="#">Soil Health Prediction</a></li>
+                        <li><a href="{{url_for('predictfarm')}}">Crop Recommendation</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-cloud"></i>Weather</a></li>
+                <li><a href="#"><i class="fa fa-list"></i>Services</a>
+                    <ul class="sublist">
+                        <li><a href="#">Expert Consultancy</a></li>
+                        <li><a href="{{ url_for('budget') }}">Budget Calculator</a></li>
+                        <li><a href="{{ url_for('water') }}">Water Usage Tracker</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('FAQ') }}"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                <li><a href="{{ url_for('govt') }}"><i class="fa-solid fa-money-bill-wave"></i>Govt. Schemes</a></li>
+                <li><a href="#"><i class="fa-solid fa-wheat-awn"></i>Crop</a>
+                    <ul class="sublist">
+                        <li><a href="{{ url_for('seed') }}">Info on Seeds</a></li>
+                        <li><a href="https://agmarknet.gov.in/">Current Seed Price</a></li>
+                        <li><a href="#">Fertilizer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-book"></i>Tech Knowledge</a>
+                    <ul class="sublist">
+                        <li><a href="{{ url_for('solarpanel') }}">Solar Panel</a></li>
+                        <li><a href="{{ url_for('tech') }}">Modern Day Tech</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa fa-comments"></i>Contact Us</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="content float-right">
+            <header>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul class="icons">
+                    <!-- <li class="language-select" id="google_translate_element"> -->
+                    <!-- The Google Translate dropdown will be dynamically created here -->
+                    </li>
+                    <li><i class="fas fa-bell" title="Notifications"></i></li>
+                    <li class="float-left" id="socialMediaIcon"><a href="javascript:void(0);" title="Social Medias"><img
+                                alt="Social Medias"
+                                src="https://ppqs.gov.in/sites/all/modules/cmf/cmf_content/assets/images/ico-social.png"></a>
+                        <ul id="socialMediaDropdown">
+                            <li><a target="_blank" title="External site that opens in a new window"
+                                    href="https://facebook.com/dppqs"><img alt="Facebook"
+                                        src="https://ppqs.gov.in/sites/all/modules/cmf/cmf_content/assets/images/ico-facebook.png"></a>
+                            </li>
+                            <li><a target="_blank" title="External site that opens in a new window"
+                                    href="https://twitter.com/ppaindia"><img
+                                        alt="Twitter, External Link that opens in a new window"
+                                        src="https://ppqs.gov.in/sites/all/modules/cmf/cmf_content/assets/images/ico-twitter.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><i class="fa-solid fa-language" title="languages"></i></li>
+                </ul>
+            </header>
+
+            <div class="page">
+                <div class="container">
+                    <div class="box">
+                        <a href="https://krushidukan.bharatagri.com/pages/bharatagri-video-call-service-page"
+                            target="_blank"><img src="{{ url_for('static', filename='images/crop_medical.png') }}"
+                                alt="Clickable img"></a>
+                    </div>
+                    <div class="box"> <a href="https://www.pmkisan.gov.in/" target="_blank"><img
+                                src="{{ url_for('static', filename='images/govt_schems.png') }}"
+                                alt="Clickable img"></a>
+                    </div>
+                    <div class="box"> <a href="https://www.iffcobazar.in/en/seeds/vegetable-seeds" target="_blank"><img
+                                src="{{ url_for('static', filename='images/seeds_buy.png') }}" alt="Clickable img"
+                                style="height: 200px; ;"></a>
+                    </div>
+                    <div class="box"> <a href="{{ url_for('loan') }}" target="_blank"><img
+                                src="{{ url_for('static', filename='images/agri_loan.png') }}" alt="Clickable img"></a>
+                    </div>
+                    <div class="box"> <a href="https://pmfby.gov.in/" target="_blank"><img
+                                src="{{ url_for('static', filename='images/crop_insurance.png') }}"
+                                alt="Clickable img"></a>
+                    </div>
+                    <div class="box"><a href="{{ url_for('buyerseller') }}" target="_blank"><img
+                                src="{{ url_for('static', filename='images/crop_selling.png') }}"
+                                alt="Clickable img"></a>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="footer-words">
+                    <span>Website Policy</span>
+                    <span>Help</span>
+                    <span>Services</span>
+                    <span>Newsletter</span>
+                    <span>Terms of Use</span>
+                </div>
+                <div class="copyright-content">
+                    Copyright &copy; 2024 website for farmers
+                    <span>All right reserved</span>
+                    <span class="lastupdated">Last Updated: 27 April 2024</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/hero.js') }}"></script>
+</body>
+
+</html>

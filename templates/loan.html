@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Farmer Loan Application Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loan.css') }}">
+</head>
+
+<body>
+    <h2>Farmer Loan Application Form</h2>
+    <div class="farmer-form">
+        <form action="/submit_farmer" method="post">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="amount">Loan Amount Needed:</label><br>
+            <input type="text" id="amount" name="amount"><br><br>
+
+            <label for="contact">Contact Number:</label><br>
+            <input type="text" id="contact" name="contact"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <h2>Loan Giver Form</h2>
+    <div class="loan-form">
+        <form action="/submit_loan_giver" method="post">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="phone">Your Phone Number:</label><br>
+            <input type="text" id="phone" name="phone"><br><br>
+
+            <label for="amount">Loan Amount Offered:</label><br>
+            <input type="text" id="amount" name="amount"><br><br>
+
+            <label for="interest">Interest Rate (%):</label><br>
+            <input type="text" id="interest" name="interest"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+</body>
+
+</html>

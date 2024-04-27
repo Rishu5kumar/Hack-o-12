@@ -1,0 +1,87 @@
+/* govt.html */
+.subnav {
+    float: left;
+    overflow: hidden;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.subnav .subnavbtn {
+    border: none;
+    outline: none;
+    color: white;
+
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+
+.subnav-content {
+    display: none;
+    position: absolute;
+
+    background-color: black;
+    z-index: 1;
+}
+
+.subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+.subnav-content a:hover {
+    background-color: rgb(6, 240, 26);
+    color: black;
+}
+
+.subnav:hover .subnav-content {
+    display: block;
+}
+.top-link {
+    transition: all .25s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3em 3em 0;
+    border-radius: 50%;
+    padding: .25em;
+    width: 80px;
+    height: 80px;
+    background-color: #F8F8F8;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &:focus {
+        display: block;
+        top: 5px;
+        left: 5px;
+        z-index: 100000;
+        clip-path: none;
+        background-color: #eee;
+        padding: 15px 23px 14px;
+        width: auto;
+        height: auto;
+        text-decoration: none;
+        line-height: normal;
+        color: #444;
+        font-size: 1em;
+
+    }
+}

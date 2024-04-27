@@ -1,0 +1,6 @@
+numpy==1.26.3
+flask
+pandas
+scikit-learn
+streamlit==1.30.0
+tensorflow==2.15.0.post1

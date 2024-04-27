@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer Seller Forms</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/buyerseller.css') }}">
+</head>
+
+<body>
+  <h1>Buyer and Seller Information</h1>
+
+  <h2>Buyer Form</h2>
+  <form action="/process_buyer" method="post" required>
+    <label for="buyer_name">Name:</label>
+    <input type="text" id="buyer_name" name="buyer_name" required><br><br>
+    <label for="commodity">Commodity:</label>
+    <select id="commodity" name="commodity" required>
+      <option value="">Select Commodity</option>
+      <option value="rice">Rice</option>
+      <option value="papaya">Papaya</option>
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="pulses">Pulses (Variety available upon selection)</option>
+    </select><br><br>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required><br><br>
+    <label for="contact_number">Contact Number:</label>
+    <input type="number" id="contact_number" name="contact_number" required pattern="[0-9]{10}"
+      title="Please enter a valid 10-digit phone number"> <br><br>
+    <input type="submit" value="Submit Buyer Info">
+  </form>
+
+  <h2>Seller Form</h2>
+  <form action="/process_seller" method="post" required>
+    <label for="seller_name">Name:</label>
+    <input type="text" id="seller_name" name="seller_name" required><br><br>
+    <label for="commodity">Commodity:</label>
+    <select id="commodity" name="commodity" required>
+      <option value="">Select Commodity</option>
+      <option value="rice">Rice</option>
+      <option value="papaya">Papaya</option>
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="pulses">Pulses (Variety available upon selection)</option>
+    </select><br><br>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required><br>
+    <label for="contact_number">Contact Number:</label>
+    <input type="number" id="contact_number" name="contact_number" required pattern="[0-9]{10}"
+      title="Please enter a valid 10-digit phone number"> <br><br>
+    <input type="submit" value="Submit Buyer Info">
+  </form>
+</body>
+
+</html>

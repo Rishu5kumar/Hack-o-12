@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Usage Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/water.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Water Usage Tracker</h1>
+    <form id="water-usage-form">
+      <div class="form-group">
+        <label for="field">Field:</label>
+        <input type="text" id="field" name="field" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="source">Water Source:</label>
+        <select id="source" name="source">
+          <option value="well">Well</option>
+          <option value="canal">Canal</option>
+          <option value="reservoir">Reservoir</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="method">Irrigation Method:</label>
+        <select id="method" name="method">
+          <option value="sprinkler">Sprinkler</option>
+          <option value="drip">Drip</option>
+          <option value="flood">Flood</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="meter-section">
+        <label for="meter-reading">Meter Reading (liters):</label>
+        <input type="number" id="meter-reading" name="meter-reading">
+      </div>
+
+      <div class="form-group" id="duration-section">
+        <label for="duration">Estimated Duration (hours):</label>
+        <input type="number" id="duration" name="duration">
+      </div>
+
+      <div class="form-group">
+        <label for="crop">Crop Type:</label>
+        <select id="crop" name="crop">
+          <option value="corn">Corn</option>
+          <option value="soybean">Soybean</option>
+          <option value="tomato">Tomato</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="weather">Weather Conditions:</label>
+        <input type="text" id="weather" name="weather">
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="output" class="output"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/water.js') }}"></script>
+</body>
+
+</html>

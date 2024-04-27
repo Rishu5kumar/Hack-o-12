@@ -1,0 +1,21 @@
+h1 {
+    color: mediumseagreen;
+    text-align: center;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+.card{
+margin-left:410px;
+margin-top: 20px;
+color: white;
+}
+.container{
+background:#edf2f7;
+font-weight: bold;
+padding-bottom:10px;
+border-radius: 15px;
+}

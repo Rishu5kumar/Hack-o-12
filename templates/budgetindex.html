@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Budget Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/budget.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Farm Budget Calculator</h1>
+        <label for="input-cost">Input Cost ($/acre):</label>
+        <input type="number" id="input-cost" placeholder="Enter input cost">
+        <label for="expected-yield">Expected Yield (bushels/acre):</label>
+        <input type="number" id="expected-yield" placeholder="Enter expected yield">
+        <label for="market-price">Market Price ($/bushel):</label>
+        <input type="number" id="market-price" placeholder="Enter market price">
+        <button onclick="calculateBudget()">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/budget.js') }}"></script>
+</body>
+
+</html>
