@@ -5,71 +5,14 @@ import sklearn
 import pickle
 import os
 import json
-# from PIL import Image
 
-# import tensorflow as tf
-# import streamlit as st
-
-
-# working_dir = os.path.dirname(os.path.abspath(__file__))
-# model_path = f"{working_dir}/trained_model/plant_disease_prediction_model.h5"
-# # Load the pre-trained model
-# model = tf.keras.models.load_model(model_path)
-
-# # loading the class names
-# class_indices = json.load(open(f"{working_dir}/class_indices.json"))
-
-
-# # Function to Load and Preprocess the Image using Pillow
-# def load_and_preprocess_image(image_path, target_size=(224, 224)):
-#     # Load the image
-#     img = Image.open(image_path)
-#     # Resize the image
-#     img = img.resize(target_size)
-#     # Convert the image to a numpy array
-#     img_array = np.array(img)
-#     # Add batch dimension
-#     img_array = np.expand_dims(img_array, axis=0)
-#     # Scale the image values to [0, 1]
-#     img_array = img_array.astype('float32') / 255.
-#     return img_array
-
-
-# # Function to Predict the Class of an Image
-# def predict_image_class(model, image_path, class_indices):
-#     preprocessed_img = load_and_preprocess_image(image_path)
-#     predictions = model.predict(preprocessed_img)
-#     predicted_class_index = np.argmax(predictions, axis=1)[0]
-#     predicted_class_name = class_indices[str(predicted_class_index)]
-#     return predicted_class_name
-
-
-# # Streamlit App
-# st.title('Plant Disease Classifier')
-
-# uploaded_image = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
-
-# if uploaded_image is not None:
-#     image = Image.open(uploaded_image)
-#     col1, col2 = st.columns(2)
-
-#     with col1:
-#         resized_img = image.resize((150, 150))
-#         st.image(resized_img)
-
-#     with col2:
-#         if st.button('Classify'):
-#             # Preprocess the uploaded image and predict the class
-#             prediction = predict_image_class(model, uploaded_image, class_indices)
-#             st.success(f'Prediction: {str(prediction)}')
-            
-            
 # importing model
 model = pickle.load(open('models/model.pkl','rb'))
 sc = pickle.load(open('models/standscaler.pkl','rb'))
 ms = pickle.load(open('models/minmaxscaler.pkl','rb'))
 dtr = pickle.load(open('models/dtr.pkl','rb'))
 preprocessor = pickle.load(open('models/preprocessor.pkl','rb'))
+fermodel = pickle.load(open('models/fert_model.pkl','rb'))
 
 
 app = Flask(__name__)
@@ -77,7 +20,11 @@ app = Flask(__name__)
 
 users = [
     {'name':'user1', 'email': 'user1@example.com', 'password': 'password1'},
-    {'name':'user2', 'email': 'user2@example.com', 'password': 'password2'}
+    {'name':'user2', 'email': 'user2@example.com', 'password': 'password2'},
+    {'name':'Rounak', 'email': 'rounakbiswal2003@gmail.com', 'password': 'rounak'},
+    {'name':'rishu', 'email': 'kumar05.rishu@gmai.com', 'password': 'rishu'},
+    {'name':'niharika', 'email': 'nbniharika24@gmail.com', 'password': 'niharika'},
+    {'name':'yashmin', 'email': 'swain74yasmin@gmail.com', 'password': 'yasmin'}
 ]
 
 @app.route('/')
@@ -194,6 +141,9 @@ def predict():
 def yieldpredict():
     return render_template("yield.html")
 
+@app.route('/feedback')
+def feedback():
+    return render_template("feedback_form.html")
 @app.route("/yields",methods=['POST'])
 def yields():
     if request.method == 'POST':
@@ -210,8 +160,39 @@ def yields():
 
         return render_template('yield.html',prediction = prediction)
 
+@app.route('/predictfer')
+def predictfer():
+    return render_template("ferpredict.html")
+
+@app.route('/wea')
+def wea():
+    return render_template("wea.html")
+
+@app.route('/ferpred', methods=['POST'])
+def ferpred():
+    if request.method == 'POST':
+        # Get the input values from the form
+        Temperature = request.form['Temperature']
+        Humidity = request.form['Humidity']
+        Moisture = request.form['Moisture']
+        # Soil_Type = request.form['Soil_Type']
+        # Crop_Type = request.form['Crop_Type']
+        Nitrogen = request.form['Nitrogen']
+        Potassium = request.form['Potassium']
+        Phosphorous = request.form['Phosphorous']
+
+        # Make prediction
+        pred = model.predict([[Temperature, Humidity, Moisture, 40, Nitrogen, Potassium, Phosphorous,]])[0]
+
+        # Render the prediction result template with the prediction
+        return render_template('ferpredict.html', result=pred)
+
 @app.route('/logout')
 def logout():
     return render_template('index.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contactus_form.html')
 if __name__ == "__main__":
     app.run(debug=True)

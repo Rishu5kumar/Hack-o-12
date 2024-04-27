@@ -27,14 +27,15 @@
                         <li><a href="#">Rainfall Prediction</a></li>
                         <li><a href="{{url_for('yieldpredict')}}">Crop Yield Prediction</a></li>
                         <li><a href="#">Plant Disease Prediction</a></li>
-                        <li><a href="#">Soil Health Prediction</a></li>
+                        <li><a href="{{url_for('predictfer') }}">Fertilizer Prediction</a></li>
                         <li><a href="{{url_for('predictfarm')}}">Crop Recommendation</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="fa-solid fa-cloud"></i>Weather</a></li>
+                <li><a href="{{ url_for('wea') }}"><i class="fa-solid fa-cloud"></i>Weather</a></li>
                 <li><a href="#"><i class="fa fa-list"></i>Services</a>
                     <ul class="sublist">
-                        <li><a href="#">Expert Consultancy</a></li>
+                        <li><a href="{{ url_for('consultancy') }}">Expert Consultancy</a></li>
+                        <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
                         <li><a href="{{ url_for('budget') }}">Budget Calculator</a></li>
                         <li><a href="{{ url_for('water') }}">Water Usage Tracker</a></li>
                     </ul>
@@ -54,7 +55,7 @@
                         <li><a href="{{ url_for('tech') }}">Modern Day Tech</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="fa fa-comments"></i>Contact Us</a></li>
+                <li><a href="{{ url_for('contact') }}"><i class="fa fa-comments"></i>Contact Us</a></li>
                 <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
             </ul>
         </div>

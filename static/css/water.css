@@ -1,4 +1,8 @@
 body {
+  background-image: url("/static/images/water.jpg");
+  /* background-image: url("/static/images/dreamstime_irrigation-farm-irrigate-water.jpg"); */
+  background-size: cover;
+  background-position: center;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -9,14 +13,14 @@ body {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: rgba(101, 101, 101, 0.737);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #ffffff;
 }
 
 .form-group {
@@ -27,11 +31,12 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
 }
 
 input[type="text"],
 input[type="number"],
+input[type="date"],
 select {
   width: calc(100% - 12px);
   padding: 10px;

@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.feedback-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.288);
+    width: 400px;
+    padding-right: 55px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="radio"]
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea{
+    width: 410px;
+    height: 100px;
+}
+
+input[type="radio"]{
+    cursor: pointer;
+}
+button {
+    width: 415px;
+    padding: 10px;
+    border: none;
+    background-color: #5c67f2;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a54e1;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row;
+    font-size: 0; /* Removes the space between inline-block elements */
+}
+.star-rating input {
+    display: none; /* Hide the radio buttons */
+}
+.star-rating label {
+    font-size: 2rem; /* Font size of the stars */
+    color: #ccc; /* Color of stars (grey) */
+    cursor: pointer;
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #f5b301; /* Color when hovered or checked (gold) */
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Prediction</title>
+</head>
+<body>
+    <h1>Fertilizer Prediction</h1>
+    <form action="/ferpred" method="post">
+        <label for="Temperature">Temperature:</label>
+        <input type="number" name="Temperature" required><br>
+
+        <label for="Humidity">Humidity:</label>
+        <input type="number" name="Humidity" required><br>
+
+        <label for="Moisture">Moisture:</label>
+        <input type="number" name="Moisture" required><br>
+
+        <label for="Soil_Type">Soil Type:</label>
+        <select name="Soil_Type" required>
+            <option value="Sandy">Sandy</option>
+            <option value="Clay">Clay</option>
+            <option value="Loam">Loam</option>
+        </select><br>
+
+        <label for="Crop_Type">Crop Type:</label>
+        <select name="Crop_Type" required>
+            <option value="Maize">Maize</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Rice">Rice</option>
+        </select><br>
+
+        <label for="Nitrogen">Nitrogen:</label>
+        <input type="number" name="Nitrogen" required><br>
+
+        <label for="Potassium">Potassium:</label>
+        <input type="number" name="Potassium" required><br>
+
+        <label for="Phosphorous">Phosphorous:</label>
+        <input type="number" name="Phosphorous" required><br>
+
+        <input type="submit">
+    </form>
+    {% if result %}
+    <!-- <div class="card bg-dark" style="width: 18rem;margin: 20px auto 0;"> -->
+      <img src="{{url_for('static', filename='images/img.jpg')}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Recommend Fertilizer is:</h5>
+        <p class="card-text"> {{ result }} </p>
+      </div>
+    </div>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact_us.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/contact-us.jpg') }}">
+        </div>
+        <div class="form">
+        <h2>Get in touch with us</h2>
+        <form id="contactForm">
+            <div class="input-group">
+                <input type="text" id="name" name="name" required placeholder="Name">
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" required placeholder="Email">
+            </div>
+            <div class="input-group">
+                <input type="tel" id="phone" name="phone" placeholder="Phone (optional)">
+            </div>
+            <div class="input-group">
+                <textarea id="message" name="message" rows="4" required placeholder="Message"></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/contact_us.js') }}"></script>
+</body>
+</html>
