@@ -13,7 +13,8 @@ ms = pickle.load(open('models/minmaxscaler.pkl','rb'))
 dtr = pickle.load(open('models/dtr.pkl','rb'))
 preprocessor = pickle.load(open('models/preprocessor.pkl','rb'))
 fermodel = pickle.load(open('models/fert_model.pkl','rb'))
-
+rainmodel = pickle.load(open('models/classifier.pkl','rb'))
+rainferti = pickle.load(open('models/fertilizer.pkl','rb'))
 
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ users = [
     {'name':'user1', 'email': 'user1@example.com', 'password': 'password1'},
     {'name':'user2', 'email': 'user2@example.com', 'password': 'password2'},
     {'name':'Rounak', 'email': 'rounakbiswal2003@gmail.com', 'password': 'rounak'},
-    {'name':'rishu', 'email': 'kumar05.rishu@gmai.com', 'password': 'rishu'},
+    {'name':'rishu', 'email': 'kumar05.rishu@gmail.com', 'password': 'rishu'},
     {'name':'niharika', 'email': 'nbniharika24@gmail.com', 'password': 'niharika'},
     {'name':'yashmin', 'email': 'swain74yasmin@gmail.com', 'password': 'yasmin'}
 ]
@@ -167,7 +168,21 @@ def predictfer():
 @app.route('/wea')
 def wea():
     return render_template("wea.html")
+@app.route('/d1')
+def d1():
+    return render_template("detail.html")
 
+@app.route('/d2')
+def d2():
+    return render_template("detail2.html")
+
+@app.route('/d3')
+def d3():
+    return render_template("detail3.html")
+
+@app.route('/d4')
+def d4():
+    return render_template("detail4.html")
 @app.route('/ferpred', methods=['POST'])
 def ferpred():
     if request.method == 'POST':
@@ -194,5 +209,25 @@ def logout():
 @app.route('/contact')
 def contact():
     return render_template('contactus_form.html')
+
+@app.route('/rain')
+def rain():
+    return render_template('rain.html')
+
+@app.route('/predictrain',methods=['POST'])
+def predictrain():
+    temp = request.form.get('temp')
+    humi = request.form.get('humid')
+    mois = request.form.get('mois')
+    soil = request.form.get('soil')
+    crop = request.form.get('crop')
+    nitro = request.form.get('nitro')
+    pota = request.form.get('pota')
+    phosp = request.form.get('phos')
+    input = [int(temp),int(humi),int(mois),int(soil),int(crop),int(nitro),int(pota),int(phosp)]
+
+    res = rainferti.classes_[rainmodel.predict([input])]
+
+    return render_template('rain.html',x = ('Predicted Fertilizer is {}'.format(res)))
 if __name__ == "__main__":
     app.run(debug=True)

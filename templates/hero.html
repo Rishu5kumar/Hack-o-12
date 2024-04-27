@@ -24,11 +24,11 @@
             <ul class="nav">
                 <li><a href="#" class="active"><i class="fa fa-home"></i>Predictions</a>
                     <ul class="sublist">
-                        <li><a href="#">Rainfall Prediction</a></li>
+                        <li><a href="{{ url_for('rain') }}">Fertilizer Prediction</a></li>
                         <li><a href="{{url_for('yieldpredict')}}">Crop Yield Prediction</a></li>
-                        <li><a href="#">Plant Disease Prediction</a></li>
-                        <li><a href="{{url_for('predictfer') }}">Fertilizer Prediction</a></li>
                         <li><a href="{{url_for('predictfarm')}}">Crop Recommendation</a></li>
+                        <li><a href="#">Plant Disease Prediction</a></li>
+                        <li><a href="#">Rainfall Prediction</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ url_for('wea') }}"><i class="fa-solid fa-cloud"></i>Weather</a></li>

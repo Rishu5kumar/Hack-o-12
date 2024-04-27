@@ -148,10 +148,11 @@ header {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('/static/images/web_background.png');
+    background-image: url('/static/images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    opacity:0.9;    
     height: 100vh;
     display: flex;
     justify-content: center;
